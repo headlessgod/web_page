@@ -1,5 +1,7 @@
 * {
     box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
 }
 header {
     background: black;
@@ -14,6 +16,7 @@ body, ul {
     max-width: 1000px;
     margin: auto;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
 }
@@ -30,9 +33,6 @@ header ul li a:hover {
     background: #424242;
     color: #f8d530;
 }
-header ul li {
-    list-style: none;
-}
 header ul {
     display: flex;
     justify-content: space-between;
@@ -42,9 +42,86 @@ header ul {
    display: block;
    max-width: 55px;
 }
+#main {
+    align-items: flex-start;
+}
+#sidebar {
+    width: 23%;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+#content {
+    width: 75%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+#sidebar, #content {
+    margin: 15px 0;
+    /*box-shadow: -4px -6px 10px -7px #00000038;*/
+    box-shadow: 0 0 4px 1px #00000033;
+    padding: 15px;
+}
+#sidebar ul li a {
+    display: block;
+    padding: 10px 0px;
+    color: black;
+    border-bottom: 1px inset black;
+}
+#sidebar ul li:last-child a {
+    border: none;
+}
+#sidebar ul li a:hover {
+    color: #f8d530;
+    border-color: #f8d530; 
+}
+.product {
+    width: 21%;
+    box-shadow: 0 0 4px 1px #00000033;
+    margin-bottom: 15px;
+    padding: 15px 15px;
+}
+.product:hover {
+    -moz-transform:scale(1.02);
+    -webkit-transform:scale(1.02);;
+    -o-transform:scale(1.02);;
+    -ms-transform:scale(1.02);;
+    transform:scale(1.02);;
+    box-shadow: 0 0 4px 1px #00000060;
+}
+.product img {
+    max-width: 100%;
+}
+.product h2 {
+    margin: 0 0 15px 0;
+    text-align: center;
+}
+.p-bottom {
+    display: flex;
+    justify-content: space-between;
+}
+.p-bottom button {
+    background: #f8d530;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+.p-bottom span {
+    font-weight: bold;
+    font-size: 16px;
+}
+.p-bottom button:hover {
+    background: #f2ce20bf;
+}
 
 
 
+
+@media (max-width: 930px) {
+    .product {
+        width: 31%;
+    }
+}
 
 @media (max-width: 725px) {
     header .container {
@@ -56,5 +133,27 @@ header ul {
         width: 100%;
         text-align: center;
         margin-top: 25px;
+    }
+    .product {
+        width: 48%;
+    }
+    #sidebar {
+        width: 33%;
+    }
+    #content {
+        width: 65%;
+    }
+}
+
+
+@media (max-width: 570px) {
+    #sidebar {
+        width: 100%;
+    }
+    #content {
+        width: 100%;
+    }
+    #sidebar, #content {
+        text-align: center;
     }
 }
