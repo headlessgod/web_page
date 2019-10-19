@@ -3,6 +3,9 @@
     list-style: none;
     text-decoration: none;
 }
+
+/*HEADER*/
+
 header {
     background: black;
     color: white;
@@ -61,6 +64,7 @@ header ul {
     /*box-shadow: -4px -6px 10px -7px #00000038;*/
     box-shadow: 0 0 4px 1px #00000033;
     padding: 15px;
+    min-height: 860px;
 }
 #sidebar ul li a {
     display: block;
@@ -114,8 +118,69 @@ header ul {
     background: #f2ce20bf;
 }
 
+/*FOOTER*/
+
+footer {
+    width: 100%;
+    box-shadow: 0 0 4px 1px #00000033;
+    padding: 15px;
+    background: black;
+    color: white;
+}
+footer .container > div {
+    max-width: 260px;
+    width: 100%;
+}
+footer .container {
+    align-items: flex-start;
+}
+footer a {
+    color: white;
+    display: block;
+    padding: 0 0 5px 0;
+}
+footer a:hover {
+    text-decoration: underline;
+    color: #f8d530; 
+}
+footer h3 {
+    margin: 0 0 15px 0;
+}
+.form-subscribe, .social-links {
+    display: flex;
+    flex-direction: column;
+}
+.form-subscribe input {
+    margin-bottom: 15px;
+    height: 30px;
+    padding: 5px;
+}
+.form-subscribe button {
+    background: #f8d530;
+    border: none;
+    padding: 5px 15px;
+    cursor: pointer;
+    font-weight: bold;
+}
+.form-subscribe button:hover {
+    background: #424242;
+    color: #f8d530;
+}
+.social-links a {
+    padding: 0 0 15px 0;
+    display: block;
+    font-size: 20px;
+}
+.social-links {
+    padding-left: 150px;
+}
 
 
+
+
+
+
+/*MEDIA*/
 
 @media (max-width: 930px) {
     .product {
@@ -127,6 +192,9 @@ header ul {
     header .container {
         flex-wrap: wrap;
         justify-content: center;
+    }
+    #sidebar, #content {
+        min-height: auto;
     }
     header ul {
         flex-direction: column;
@@ -155,5 +223,18 @@ header ul {
     }
     #sidebar, #content {
         text-align: center;
+    }
+}
+
+
+@media (max-width: 830px) {
+    footer > div.container {
+        flex-direction: column;
+        align-items: center;
+    }
+    footer > div.container > div {
+        text-align: center;
+        padding-left: 0;
+        margin-bottom: 15px; 
     }
 }
